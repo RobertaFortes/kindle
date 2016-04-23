@@ -7,38 +7,13 @@ body {
   margin: 0;
 }
 
-figcaption,
-figure,
-footer,
-header,
 
-menu,
-nav,
-section{
-  display: block;
-}
 
 img{width: 100%;max-width: 100%;}
 section{width: 100%;clear: both;}
 ul, li{list-style: none;}
 .container{ width: 65%; margin: 0 auto; }
 
-/*Section 1*/
-section#topo{height: 470px;}
-header .container{ width: 65%; margin: 0 auto; padding-top: 16%;}
-
-header img.banner{position: absolute;z-index: -1;top: 0;}
-
-.banner_info {text-align: center;}
-.banner_info h1{display: none;}
-.banner_info h2.fontep{text-transform: uppercase;color: #fff3be;font-size: 14px;margin-top: 35px;}
-.banner_info h2.fonteg{text-transform: uppercase;color: #fff3be;font-size: 16px;width: 80%;margin: 0 auto;margin-bottom: 20px;}
-
-img.ldestaque{width: 80%;  margin-bottom: 15px;}
-
-.banner_info p{color: #fff3be;font-size: 12px;width: 75%;margin: 0 auto}
-
-button.bdestaque{background: #f86b12;padding: 15px 50px;font-size: 10px;width: 60%;margin-top: 30px;color: #fff;border-bottom: 4px solid #c6540e !important;border: none;text-transform: uppercase;border-radius: 3px;}
 
 
 
@@ -681,6 +656,24 @@ button.bdestaque{background: #f86b12;padding: 15px 50px;font-size: 10px;width: 6
 }
 
 
+/*Section 1*/
+section#topo{height: 470px;}
+header .container{ width: 65%; margin: 0 auto; padding-top: 16%;}
+
+header img.banner{position: absolute;z-index: -1;top: 0;}
+
+.banner_info {text-align: center;}
+.banner_info h1{display: none;}
+.banner_info h2.fontep{text-transform: uppercase;color: #fff3be;font-size: 14px;margin-top: 35px;}
+.banner_info h2.fonteg{text-transform: uppercase;color: #fff3be;font-size: 16px;width: 80%;margin: 0 auto;margin-bottom: 20px;}
+
+img.ldestaque{width: 80%;  margin-bottom: 15px;}
+
+.banner_info p{color: #fff3be;font-size: 12px;width: 75%;margin: 0 auto}
+
+button.bdestaque{background: #f86b12;padding: 15px 50px;font-size: 10px;width: 60%;margin-top: 30px;color: #fff;border-bottom: 4px solid #c6540e !important;border: none;text-transform: uppercase;border-radius: 3px;}
+
+
 /*Section 2*/
 section#dois{margin-top: 100px;}
 
@@ -690,16 +683,16 @@ section#dois{margin-top: 100px;}
 img.mulher{margin-left: -50px;}
 
 /*Section 3*/
-section#tres img.banner{position: absolute;z-index: -1;margin-top: -75px;}
+section#tres img.banner{position: absolute;z-index: 0;margin-top: -75px;}
 
 .tres_info{color: #fff;margin-top: 20px;}
 .tres_info h3{text-transform: uppercase;line-height: 30px;font-size: 25px;}
-.tres_info p{width: 97%;font-size: 13px;line-height: 25px;}
+.tres_info p{width: 97%;font-size: 13px;line-height: 20px;margin: 0;}
 button.bdestaque2{background: #f86b12;padding: 15px 50px;font-size: 10px;width: 90%;margin-top: 20px;color: #fff;border-bottom: 4px solid #c6540e !important;border: none;text-transform: uppercase;border-radius: 3px;}
   
 .nutricional{width: 50%; height: 393px; background: url("../imgs/joaninha.png") 0px 50px no-repeat;position: relative;margin-top: 20px;}
 
-table{background: #fff;margin-left: 20px;position: absolute;z-index: -1;padding: 15px;font-size: 12px;border-radius: 3px;}
+table{background: #fff;margin-left: 20px;position: absolute;z-index: 0;padding: 15px;font-size: 12px;border-radius: 3px;}
 thead{text-align: center;}
 td{ vertical-align:middle;}
 thead td{width: 100%;clear: both;}
@@ -743,7 +736,7 @@ div.slide p{width: 20%;margin-left: 430px;font-size: 14px;margin-top: 70px;}
 
 
 /*Footer*/
-footer{background: #fbfbfb; width: 100%; text-align: center;padding: 20px 0;position: absolute;}
+footer{background: #fbfbfb; width: 100%; text-align: center;padding: 30px 0 10px 0;position: absolute;border-top: 1px solid #f2eeee;}
 footer img{width: 20%;}
 footer ul {display: inline-block;}
 footer ul li{float:left; width: 40px;}

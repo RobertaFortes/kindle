@@ -9,12 +9,23 @@
   <meta name="author" content="Roberta Fortes">
   <!-- build:css css/styles.min.css -->
   <link rel="stylesheet" href="css/styles.css">
+  <link href="css/example.css" rel="stylesheet" type="text/css">
+   <link href="css/jquery.socialfeed.css" rel="stylesheet" type="text/css">
   <!-- endbuild -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+   <link href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
   <!-- build:js js/scripts.min.js -->
   <script src="js/scripts.js"></script>
   
-
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Codebird.js - required for TWITTER -->
+    <script src="bower_components/codebird-js/codebird.js"></script>
+    <!-- doT.js for rendering templates -->
+    <script src="bower_components/doT/doT.min.js"></script>
+    <!-- Moment.js for showing "time ago" -->
+    <script src="bower_components/moment/min/moment.min.js"></script>
+    <!-- Social-feed js -->
+    <script src="js/jquery.socialfeed.js"></script>
   <!-- endbuild -->
 
   <!--[if lt IE 9]>
@@ -23,8 +34,9 @@
 </head>
 
 <body>
-<section id="topo">
+
 	<header>
+	<section id="topo">
 	<img src="imgs/banner_top.jpg" class="banner">
 	<div class="container">
 		<div class="col-sm-6 col-xs-12 banner_info"> 
@@ -42,8 +54,9 @@
  			</button>
 		</div>
 	</div>
+	</section>
 	</header>
-</section>
+
 <section id="dois">	
 	<div class="container">
 		<div class="col-sm-7 col-xs-12"> 
@@ -161,7 +174,23 @@
 </section>
 <section id="cinco">
 	<div class="container">
-		
+		<section class="stripe">
+        <div class="container field">
+            <input type="text" class="input field-left" value="@redemegamatte, @megamatteoficial,#megamatteoficial" id="query">
+            <button class='button field-right' id="button-update"><i class="fa fa-refresh"></i>
+            </button>
+        </div>
+    </section>
+    <section class="feed">
+        <div class="container">
+            <!--div class="controls">
+                <input type="field" value="#dolomiti" id="query" />
+                <input type="button" value="Update" />
+            </div-->
+            <div class="social-feed-container">
+            </div>
+        </div>
+    </section>
 
 
 	</div>
@@ -173,9 +202,9 @@
 			<img src="imgs/logo_footer.png" alt="MegaMatte"/>
 		</div>
 		<ul>
-			<li><a href="" class="fb">Facebook</a></li>
-			<li><a href="" class="tw">Twitter</a></li>
-			<li><a href="" class="insta">Instagram</a></li>
+			<li><a href="https://www.facebook.com/megamatteoficial/?fref=ts" class="fb" target="_blank">Facebook</a></li>
+			<li><a href="https://twitter.com/redemegamatte?lang=pt-br" class="tw" target="_blank" >Twitter</a></li>
+			<li><a href="https://www.instagram.com/redemegamatte/" class="insta" target="_blank">Instagram</a></li>
 		</ul>
 	</div>
 </footer>
