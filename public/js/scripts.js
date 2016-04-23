@@ -39,67 +39,64 @@ $(function () {
 
 $(document).ready(function() {
 
-        var updateFeed = function() {
-            var initialQuery = $('#query').val();
-            initialQuery = initialQuery.replace(" ", "");
-            var queryTags = initialQuery.split(",");
-            $('.social-feed-container').socialfeed({
-                // FACEBOOK
-                facebook: {
-                    accounts: queryTags,
-                    limit: 2,
-                    access_token: '150849908413827|a20e87978f1ac491a0c4a721c961b68c'
-                },
-                // GOOGLEPLUS
-                google: {
-                    accounts: queryTags,
-                    limit: 2,
-                    access_token: 'AIzaSyDAelFmJhg6BSUbSLe8UT7s-G53tL4_KRg'
-                },
-                // Twitter
-                twitter: {
-                    accounts: queryTags,
-                    limit: 2,
-                    consumer_key: 'qzRXgkI7enflNJH1lWFvujT2P', // make sure to have your app read-only
-                    consumer_secret: '8e7E7gHuTwyDHw9lGQFO73FcUwz9YozT37lEvZulMq8FXaPl8O', // make sure to have your app read-only
-                },
-                // VKONTAKTE
-                vk: {
-                    accounts: queryTags,
-                    limit: 2,
-                    source: 'all'
-                },
-                // INSTAGRAM
-                instagram: {
-                    accounts: queryTags,
-                    limit: 2,
-                    client_id: '88b4730e0e2c4b2f8a09a6184af2e218',
-                    access_token: ''
-                },
+    var show_per_page = 6;
+    var number_of_items = $('#list').children('div').size();
+    var number_of_pages = Math.ceil(number_of_items / show_per_page);
 
-                // GENERAL SETTINGS
-                length: 200,
-                show_media: true,
-                // Moderation function - if returns false, template will have class hidden
-                moderation: function(content) {
-                    return (content.text) ? content.text.indexOf('fuck') == -1 : true;
-                },
-                //update_period: 5000,
-                // When all the posts are collected and displayed - this function is evoked
-                callback: function() {
-                    console.log('all posts are collected');
-                }
-            });
-        };
+    $('body').append('<div class=controls></div><input id=current_page type=hidden><input id=show_per_page type=hidden>');
+    $('#current_page').val(0);
+    $('#show_per_page').val(show_per_page);
 
-        updateFeed();
-        $('#button-update').click(function() {
-            //first, get rid of old data/posts.
-            $('.social-feed-container').html('');
+    var navigation_html = '<a class="prev" onclick="previous()">Prev</a>';
+    var current_link = 0;
+    while (number_of_pages > current_link) {
+        navigation_html += '<a class="page" onclick="go_to_page(' + current_link + ')" longdesc="' + current_link + '">' + (current_link + 1) + '</a>';
+        current_link++;
+    }
+    navigation_html += '<a class="next" onclick="next()">Next</a>';
 
-            //then load new posts
-            updateFeed();
-        });
+   
+    $('.controls .page:first').addClass('active');
 
-    });
+    $('#list').children().css('display', 'none');
+    $('#list').children().slice(0, show_per_page).css('display', 'block');
+
+});
+
+
+
+function go_to_page(page_num) {
+    var show_per_page = parseInt($('#show_per_page').val(), 0);
+
+    start_from = page_num * show_per_page;
+
+    end_on = start_from + show_per_page;
+
+    $('#list').children().css('display', 'none').slice(start_from, end_on).css('display', 'block');
+
+    $('.page[longdesc=' + page_num + ']').addClass('active').siblings('.active').removeClass('active');
+
+    $('#current_page').val(page_num);
+}
+
+
+
+function previous() {
+
+    new_page = parseInt($('#current_page').val(), 0) - 1;
+    //if there is an item before the current active link run the function
+    if ($('.active').prev('.page').length == true) {
+        go_to_page(new_page);
+    }
+
+}
+
+function next() {
+    new_page = parseInt($('#current_page').val(), 0) + 1;
+    //if there is an item after the current active link run the function
+    if ($('.active').next('.page').length == true) {
+        go_to_page(new_page);
+    }
+
+}
 
